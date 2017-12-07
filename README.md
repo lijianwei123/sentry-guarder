@@ -39,12 +39,14 @@ Redis统一管理限流配置，并推送至每个JVM实例中，限流计数器
 	public List<GroupDO> shortQueryWithSleepLong()
 	{
 	}
+	
 降级
-	 public static void main(String[] args) throws Throwable
-    {
-        // 降级标识 正常调用  降级调用
-        boolean sendSmsResult = DemotionUtils.call(“降级标识”, () -> sendSms(phone, content), () -> true);
-    }
+
+	public static void main(String[] args) throws Throwable
+	{
+		// 降级标识 正常调用  降级调用
+		boolean sendSmsResult = DemotionUtils.call(“降级标识”, () -> sendSms(phone, content), () -> true);
+	}
     
 ### 5. 控制台
 
